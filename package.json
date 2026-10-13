@@ -1,6 +1,6 @@
 {
   "name": "@heyq02/rspack-plugin-last-call",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Rspack / Rsbuild plugin that transforms assets just before they are emitted.",
   "keywords": [
     "assets",
