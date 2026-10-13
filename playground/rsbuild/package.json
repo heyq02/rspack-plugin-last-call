@@ -1,0 +1,12 @@
+{
+  "name": "rspack-plugin-last-call-playground-rsbuild",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "rsbuild build"
+  },
+  "devDependencies": {
+    "@heyq02/rspack-plugin-last-call": "workspace:*",
+    "@rsbuild/core": "^1.6.15"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "name": "@heyq02/rspack-plugin-last-call",
+  "version": "0.1.0",
+  "description": "Rspack / Rsbuild plugin that transforms assets just before they are emitted.",
+  "keywords": [
+    "assets",
+    "last-call",
+    "optimize",
+    "plugin",
+    "rsbuild",
+    "rspack",
+    "transform"
+  ],
+  "homepage": "https://github.com/heyq02/rspack-plugin-last-call#readme",
+  "bugs": {
+    "url": "https://github.com/heyq02/rspack-plugin-last-call/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyq02/rspack-plugin-last-call.git"
+  },
+  "license": "MIT",
+  "author": "Ari <mail@heyq02.cn>",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "automd": "automd",
+    "build": "rs lib",
+    "check": "rs check && pnpm run typecheck",
+    "check:package": "pnpm run build",
+    "commitlint": "commitlint",
+    "dev": "rs lib --watch",
+    "format": "pnpm automd && rs fmt",
+    "format:check": "rs fmt --check",
+    "lint": "rs lint .",
+    "lint:fix": "rs lint --fix .",
+    "play:rsbuild": "pnpm build && pnpm --dir playground/rsbuild build",
+    "play:rspack": "pnpm build && pnpm --dir playground/rspack build",
+    "prepare": "rs hooks",
+    "prepublishOnly": "pnpm run build",
+    "release": "bumpp",
+    "test": "rs test",
+    "test:coverage": "rs test --coverage",
+    "test:parity": "rs test tests/webpack-parity.test.ts",
+    "typecheck": "tsc6 --noEmit"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.5.3",
+    "@heyq02/rstack-config": "^0.0.4",
+    "@rsbuild/core": "^1.6.15",
+    "@rslib/core": "^1.0.3",
+    "@rslint/core": "^0.9.5",
+    "@rspack/core": "^1.6.8",
+    "@rstest/core": "^0.12.3",
+    "@rstest/coverage-v8": "^0.12.3",
+    "@types/node": "^26.1.1",
+    "automd": "^0.4.3",
+    "last-call-webpack-plugin": "3.0.0",
+    "rstack": "^0.8.3",
+    "typescript": "npm:@typescript/typescript6@^6.0.0",
+    "webpack": "^5.111.1"
+  },
+  "peerDependencies": {
+    "@rsbuild/core": ">=1.0.0",
+    "@rspack/core": ">=1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@rsbuild/core": {
+      "optional": true
+    }
+  },
+  "packageManager": "pnpm@12.10.1",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.10.1",
+      "onFail": "download"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,16 @@
+node_modules
+dist
+coverage
+tmp
+*.tgz
+*.log
+.DS_Store
+
+# playground build outputs
+playground/*/dist
+playground/*/node_modules
+
+# dotenv environment variable files
+.env
+.env.*
+!.env.example
